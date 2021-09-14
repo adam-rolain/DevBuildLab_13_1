@@ -9,7 +9,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: whitesmoke;
 }
 
 .btn-primary {
@@ -99,4 +99,22 @@ body {
 
 a:hover {
     text-decoration: none;
+}
+
+.menuOptionsBlock {
+    display: block;
+}
+
+.menuOption {
+    display: inline-block;
+    border: 0.1em solid whitesmoke;
+    margin: 1em;
+    font-size: 4em;
+    padding: 0.1em;
+}
+
+.menuOption:hover {
+    text-decoration: none;
+    color: whitesmoke;
+    border-width: 0.2em;
 }

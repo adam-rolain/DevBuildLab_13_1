@@ -12,10 +12,23 @@ namespace Lab10_2CoffeeShop.Controllers
 {
     public class ProductController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(string category)
         {
             MySqlConnection db = new MySqlConnection("Server=localhost;Database=coffeeshop;Uid=root;Password=abc123");
-            List<Product> products = db.GetAll<Product>().ToList();
+            List<Product> products;
+            if (String.IsNullOrEmpty(category))
+            {
+                products = db.GetAll<Product>().ToList();
+                ViewData["Name"] = "Full";
+            }
+            else
+            {
+                products = db.Query<Product>("SELECT * FROM product WHERE category = @mycat", new { mycat = category }).ToList();
+                string lowerCase = category.ToLower();
+                string firstChar = lowerCase[0].ToString().ToUpper();
+                string mixedCase = firstChar + lowerCase.Substring(1);
+                ViewData["Name"] = mixedCase;
+            }
             return View(products);
         }
 

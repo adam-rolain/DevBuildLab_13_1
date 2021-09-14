@@ -1,7 +1,10 @@
-﻿
+﻿@model Product
 @{
     ViewData["Title"] = "Detail";
 }
 
-<h1>Detail</h1>
+<h1>@Model.name</h1>
 
+<img class="itemPhoto" src="@Model.photo" />
+<p class="itemDescription">@Model.description</p>
+<h6 class="itemPrice">$@Model.price</h6>

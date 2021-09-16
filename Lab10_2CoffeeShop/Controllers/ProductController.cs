@@ -14,16 +14,15 @@ namespace Lab10_2CoffeeShop.Controllers
     {
         public IActionResult Index(string category)
         {
-            MySqlConnection db = new MySqlConnection("Server=localhost;Database=coffeeshop;Uid=root;Password=abc123");
             List<Product> products;
             if (String.IsNullOrEmpty(category))
             {
-                products = db.GetAll<Product>().ToList();
+                products = DAL.GetAllProducts();
                 ViewData["Name"] = "Full";
             }
             else
             {
-                products = db.Query<Product>("SELECT * FROM product WHERE category = @mycat", new { mycat = category }).ToList();
+                products = DAL.GetProductsByCategory(category);
                 string lowerCase = category.ToLower();
                 string firstChar = lowerCase[0].ToString().ToUpper();
                 string mixedCase = firstChar + lowerCase.Substring(1);
@@ -34,8 +33,7 @@ namespace Lab10_2CoffeeShop.Controllers
 
         public IActionResult Detail(int productnumber)
         {
-            MySqlConnection db = new MySqlConnection("Server=localhost;Database=coffeeshop;Uid=root;Password=abc123");
-            Product p = db.Get<Product>(productnumber);
+            Product p = DAL.GetProduct(productnumber);
             return View(p);
         }
     }

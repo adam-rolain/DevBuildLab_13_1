@@ -1,0 +1,57 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "EditItem";
+}
+
+<h1>Edit</h1>
+
+<form method="post" action="/Admin/UpdateProduct">
+    <input name="id" value="@Model.id" hidden/>
+    <div>
+        <h5>Name</h5>
+        <input name="name" type="text" value="@Model.name" />
+    </div>
+    <div>
+        <h5>Description</h5>
+        <input name="description" type="text" value="@Model.description" />
+    </div>
+    <div>
+        <h5>Price</h5>
+        <input name="price" type="number" value="@Model.price" />
+    </div>
+    <div>
+        <h5>Photo URL</h5>
+        <input name="photo" type="text"value="@Model.photo" />
+    </div>
+    <div>
+        <h5>Category</h5>
+        <select name="category">
+            @if (Model.category == "HOT")
+            {
+                <option value="HOT" selected>Hot Drink</option>
+            }
+            else
+            {
+                <option value="HOT">Hot Drink</option>
+            }
+            @if (Model.category == "COLD")
+            {
+                <option value="COLD" selected>Cold Drink</option>
+            }
+            else
+            {
+                <option value="COLD">Cold Drink</option>
+            }
+            @if (Model.category == "FOOD")
+            {
+                <option value="FOOD" selected>Food</option>
+            }
+            else
+            {
+                <option value="FOOD">Food</option>
+            }
+        </select>
+    </div>
+    <br />
+    <input type="submit" value="Save" />
+</form>

@@ -17,12 +17,12 @@ namespace Lab10_2CoffeeShop.Controllers
             List<Product> products;
             if (String.IsNullOrEmpty(category))
             {
-                products = DAL.GetAllProducts();
+                products = ProductDAL.GetAllProducts();
                 ViewData["Name"] = "Full";
             }
             else
             {
-                products = DAL.GetProductsByCategory(category);
+                products = ProductDAL.GetProductsByCategory(category);
                 string lowerCase = category.ToLower();
                 string firstChar = lowerCase[0].ToString().ToUpper();
                 string mixedCase = firstChar + lowerCase.Substring(1);
@@ -33,7 +33,7 @@ namespace Lab10_2CoffeeShop.Controllers
 
         public IActionResult Detail(int productnumber)
         {
-            Product p = DAL.GetProduct(productnumber);
+            Product p = ProductDAL.GetProduct(productnumber);
             return View(p);
         }
     }

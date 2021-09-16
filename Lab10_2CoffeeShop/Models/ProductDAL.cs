@@ -8,7 +8,7 @@ using Dapper;
 
 namespace Lab10_2CoffeeShop.Models
 {
-    public class DAL
+    public class ProductDAL
     {
         // Database connection field
         public static MySqlConnection DB = new MySqlConnection("Server=localhost;Database=coffeeshop;Uid=root;Password=abc123");
@@ -31,5 +31,10 @@ namespace Lab10_2CoffeeShop.Models
             return DB.Get<Product>(id);
         }
 
+        // Update product
+        public static void UpdateProduct(Product prod)
+        {
+            DB.Update(prod);
+        }
     }
 }

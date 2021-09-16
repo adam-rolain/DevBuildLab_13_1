@@ -26,5 +26,28 @@ namespace Lab10_2CoffeeShop.Controllers
             ProductDAL.UpdateProduct(prod);
             return Redirect($"/Product/Detail?productnumber={prod.id}");
         }
+
+        public IActionResult AddItemForm()
+        {
+            return View();
+        }
+
+        public IActionResult AddItem(Product prod)
+        {
+            ProductDAL.AddProduct(prod);
+            return Redirect($"/Product/Detail?productnumber={prod.id}");
+        }
+
+        public IActionResult DeleteCheck(int id)
+        {
+            Product prod = ProductDAL.GetProduct(id);
+            return View(prod);
+        }
+
+        public IActionResult DeleteItem(int id)
+        {
+            ProductDAL.DeleteProduct(id);
+            return Redirect("index");
+        }
     }
 }

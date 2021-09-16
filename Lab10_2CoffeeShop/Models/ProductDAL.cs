@@ -36,5 +36,19 @@ namespace Lab10_2CoffeeShop.Models
         {
             DB.Update(prod);
         }
+
+        // Add product
+        public static void AddProduct(Product prod)
+        {
+            DB.Insert(prod);
+        }
+
+        // Delete product
+        public static void DeleteProduct(int id)
+        {
+            Product prod = new Product();
+            prod.id = id;
+            DB.Delete(prod);
+        }
     }
 }

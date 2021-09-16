@@ -17,7 +17,7 @@
     </div>
     <div>
         <h5>Price</h5>
-        <input name="price" type="number" value="@Model.price" />
+        <input name="price" type="number" min="0.01" step="any" value="@Model.price" />
     </div>
     <div>
         <h5>Photo URL</h5>
@@ -53,5 +53,5 @@
         </select>
     </div>
     <br />
-    <input type="submit" value="Save" />
+    <input type="submit" value="Save" class="btn-primary"/>
 </form>

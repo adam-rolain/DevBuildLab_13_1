@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "AddItemForm";
+}
+
+<h1>Add Menu Item</h1>
+
+<form method="post" action="/Admin/AddItem">
+    <div>
+        <h5>Name</h5>
+        <input name="name" type="text" />
+    </div>
+    <div>
+        <h5>Description</h5>
+        <input name="description" type="text" />
+    </div>
+    <div>
+        <h5>Price</h5>
+        <input name="price" type="number" min="0.01" step="any"/>
+    </div>
+    <div>
+        <h5>Photo URL</h5>
+        <input name="photo" type="text" />
+    </div>
+    <div>
+        <h5>Category</h5>
+        <select name="category">
+            <option value="HOT">Hot Drink</option>
+            <option value="COLD">Cold Drink</option>
+            <option value="FOOD">Food</option>
+        </select>
+    </div>
+    <br />
+    <input type="submit" value="Add" class="btn-primary"/>
+</form>

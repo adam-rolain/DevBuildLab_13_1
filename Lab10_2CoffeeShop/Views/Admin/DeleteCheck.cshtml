@@ -1,0 +1,13 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "DeleteCheck";
+}
+
+<h1>Are you sure you want to delete this item from the menu?</h1>
+
+<h3>@Model.name</h3>
+<img class="itemPhoto" src="@Model.photo" />
+<p class="itemDescription">@Model.description</p>
+<h6 class="itemPrice">$@Model.price</h6>
+
+<a href="/Admin/DeleteItem?id=@Model.id"class="btn btn-danger adminButton">Delete Item</a>

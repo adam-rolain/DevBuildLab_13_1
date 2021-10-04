@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Create Account</h1>
+
+<form>
+    <div class="form-group" id="FirstNameFormGroup">
+        <label for="FirstName">First Name</label>
+        <input type="text" class="form-control bg-dark border-dark" id="FirstName" placeholder="First Name">
+        <div class="text-danger text-hide">Please enter a first name before submitting the form</div>
+    </div>
+    <div class="form-group" id="LastNameFormGroup">
+        <label for="LastName">Last Name</label>
+        <input type="text" class="form-control bg-dark border-dark" id="LastName" placeholder="Last Name">
+        <div class="text-danger text-hide">Please enter a last name before submitting the form</div>
+    </div>
+    <div class="form-group" id="EmailFormGroup">
+        <label for="Email">Email address</label>
+        <input type="text" class="form-control bg-dark border-dark" id="Email" placeholder="Email">
+        <div class="text-danger text-hide">Please enter a valid email before submitting the form</div>
+    </div>
+    <div class="form-group" id="PasswordFormGroup">
+        <label for="Password">Password</label>
+        <input type="text" class="form-control bg-dark border-dark" id="Password" placeholder="Password">
+        <div class="text-danger text-hide">Please enter a password before submitting the form</div>
+    </div>
+    <div class="form-group" id="ConfirmPasswordFormGroup">
+        <label for="ConfirmPassword">Confirm Password</label>
+        <input type="text" class="form-control bg-dark border-dark" id="ConfirmPassword" placeholder="Confirm Password">
+        <div class="text-danger text-hide">Passwords must match before submitting the form</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<script src="~/js/userForm.js"></script>

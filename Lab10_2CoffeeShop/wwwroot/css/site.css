@@ -132,3 +132,16 @@ a:hover {
     left: 30em;
     display: inline-block;
 }
+
+form {
+    width: 100em;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input {
+    width: 20em;
+    display: inline-block;
+}

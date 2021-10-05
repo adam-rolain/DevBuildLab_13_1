@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Lab10_2CoffeeShop.Models
 {
-    public class User
+    public class UserInfo
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
